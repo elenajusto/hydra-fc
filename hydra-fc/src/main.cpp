@@ -1,19 +1,24 @@
 /* ------------- Libraries ------------- */
 #include <Arduino.h>
-#include <Wire.h>
-#include <SPI.h>
-#include <Adafruit_BMP280.h>
-#include <DFRobot_BMI160.h>
+#include <Wire.h>               // I2C 
+#include <SPI.h>                // SPI
+#include <Adafruit_BMP280.h>    // Barometer Library
+#include <DFRobot_BMI160.h>     // IMU Library
+#include <SD.h>                 // SD
 
 /* ------------- Variables ------------- */
 Adafruit_BMP280 bmp;
 DFRobot_BMI160 bmi160;
 const int8_t i2c_addr = 0x69;
 
-/* ------------- Function Prototypes (------------- */
+const int chipSelect = 10;
+File root;
+
+/* ------------- Function Prototypes ------------- */
 void i2cscan();
 void printBarometer();
 void printImu();
+void printDirectory(File dir, int numTabs);
 
 /* ------------- Main Program ------------- */
 void setup() {
@@ -52,12 +57,30 @@ void setup() {
                   Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
   Serial.println("Barometer intialised.\n");
 
+  // Initilise SD Card
+  Serial.print("Initializing SD card...");
+
+  if (!SD.begin(chipSelect)) {
+    Serial.println("initialization failed. Things to check:");
+    Serial.println("1. is a card inserted?");
+    Serial.println("2. is your wiring correct?");
+    Serial.println("3. did you change the chipSelect pin to match your shield or module?");
+    Serial.println("Note: press reset button on the board and reopen this Serial Monitor after fixing your issue!");
+    while (true);
+  }
+
+  Serial.println("initialization done.");
+
+  root = SD.open("/");
+
+  printDirectory(root, 0);
+
+  Serial.println("done!");
+
 }
 
 void loop() {
-  printBarometer();
   delay(500);
-  printImu();
 }
 
 /* ------------- Function Definitions ------------- */
@@ -135,5 +158,28 @@ void printImu(){
   } else{ 
     Serial.println("err");
   }
+}
 
+void printDirectory(File dir, int numTabs) {
+  while (true) {
+
+    File entry =  dir.openNextFile();
+    if (! entry) {
+      // no more files
+      break;
+    }
+    for (uint8_t i = 0; i < numTabs; i++) {
+      Serial.print('\t');
+    }
+    Serial.print(entry.name());
+    if (entry.isDirectory()) {
+      Serial.println("/");
+      printDirectory(entry, numTabs + 1);
+    } else {
+      // files have sizes, directories do not
+      Serial.print("\t\t");
+      Serial.println(entry.size(), DEC);
+    }
+    entry.close();
+  }
 }
