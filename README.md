@@ -18,5 +18,9 @@
 ### Breadboard Prototype v1.1 - Serial Output
 ![image](https://github.com/user-attachments/assets/18f54629-b74a-4086-9311-96f9ce86077a)
 
+### Breadboard Prototype V1.1 - Stationary Sensor Readout
+![image](https://github.com/user-attachments/assets/62788e29-11fa-4a19-94b3-6bafb6e45de1)
+
+
 ### Breadboard Prototype v1.1 - Physical Setup
 ![image](https://github.com/user-attachments/assets/a78cfd2f-710b-43f6-b6cc-e33092d11337)
