@@ -19,7 +19,7 @@
 ![image](https://github.com/user-attachments/assets/18f54629-b74a-4086-9311-96f9ce86077a)
 
 ### Breadboard Prototype V1.1 - Stationary Sensor Readout
-![image](https://github.com/user-attachments/assets/62788e29-11fa-4a19-94b3-6bafb6e45de1)
+![image](https://github.com/user-attachments/assets/16077b3a-ba7b-4dec-b253-1d564a5cbece)
 
 
 ### Breadboard Prototype v1.1 - Physical Setup
