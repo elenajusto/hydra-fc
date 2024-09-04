@@ -89,15 +89,15 @@ void i2cscan(){
 }
 
 void printBarometer(){
-  Serial.print(F("Temperature = "));
+  Serial.print(F("Temperature: "));
   Serial.print(bmp.readTemperature());
   Serial.println(" *C");
 
-  Serial.print(F("Pressure = "));
+  Serial.print(F("Pressure: "));
   Serial.print(bmp.readPressure());
   Serial.println(" Pa");
 
-  Serial.print(F("Approx altitude = "));
+  Serial.print(F("Altitude: "));
   Serial.print(bmp.readAltitude(1024)); /* Adjusted to local forecast! */
   Serial.println(" m");
 
@@ -112,6 +112,7 @@ void printImu(){
   // Get both accel and gyro data from bmi160
   // Parameter accelGyro is the pointer to store the data
   rslt = bmi160.getAccelGyroData(accelGyro);
+  Serial.print("IMU: ");
   if(rslt == 0){
     for(i=0;i<6;i++){
       if (i<3){
