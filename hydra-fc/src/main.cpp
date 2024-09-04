@@ -40,12 +40,15 @@ void setup() {
   // Initilise SD Card
   initSd();
 
+  // Print out contents of SD card
   root = SD.open("/");
   printDirectory(root, 0);
 }
 
 void loop() {
+  printBarometer();
   delay(500);
+  printImu();
 }
 
 /* ------------- Function Definitions ------------- */
