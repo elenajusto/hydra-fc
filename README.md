@@ -14,29 +14,28 @@
 ## To Do List
 
 ### Software
-[] Learn sensor fusion
-[] Learn kalman filtering
-[] Filter IMU and Barometer readout
-[] Fuse IMU and Barometer readout
-[] Estimate rocket pose
+- [ ] Learn sensor fusion
+- [ ] Learn kalman filtering
+- [ ] Filter IMU and Barometer readout
+- [ ] Fuse IMU and Barometer readout
+- [ ] Estimate rocket pose
 
 ### Electrical
-[] **INVESTIGATE:** Voltage Regulator - Capacitors meant to be in series instead of parallel.
-[] **QUESTION:** Has to interface with Joe's PCB (Tracker).
-[] **ISSUE:** Update fly back diode to different name (in the firing part) (Voltage protection thing).
-[] **INVESTIGATE:** Does USB-C connect via JTAG/ST-LINK to MCU or are they seperate?
-[] **ISSUE: I**indicators - LED
-[] **SUGGESTION:** Drive buzzer with a transistor or MOSFET to supply more current versus just going from the IO pins.
-[] **INFO ONLY:** Could use one decoupling capacitor if VDD pins were next to each other.
-[] **SUGGESTION:** Net labels for I2C and SPI instead of Bus Lines.
-[] **INVESTIGATE:** Decoupling capacitors for sensor components.
-[] **ISSUE:** Continuity testing for pyrotechnic channels.
-[] **INVESTIGATE:** Simulate the pyrotechnic channels.
-[] **ISSUE:** Not enough voltage for pyrotechnic channels (expected 0.5 to 1A current).
-[] **ISSUE:** Battery connector -> Remove the +5V symbols. Rename.
-[] **INVESTIGATE:** MOSFET turns on at +3.3V.
-[] **OTHER:** Clean schematic
-
+- [ ] **INVESTIGATE:** Voltage Regulator - Capacitors meant to be in series instead of parallel.
+- [ ] **QUESTION:** Has to interface with Joe's PCB (Tracker).
+- [ ] **ISSUE:** Update fly back diode to different name (in the firing part) (Voltage protection thing).
+- [ ] **INVESTIGATE:** Does USB-C connect via JTAG/ST-LINK to MCU or are they seperate?
+- [ ] **ISSUE: I**indicators - LED
+- [ ] **SUGGESTION:** Drive buzzer with a transistor or MOSFET to supply more current versus just going from the IO pins.
+- [ ] **INFO ONLY:** Could use one decoupling capacitor if VDD pins were next to each other.
+- [ ] **SUGGESTION:** Net labels for I2C and SPI instead of Bus Lines.
+- [ ] **INVESTIGATE:** Decoupling capacitors for sensor components.
+- [ ] **ISSUE:** Continuity testing for pyrotechnic channels.
+- [ ] **INVESTIGATE:** Simulate the pyrotechnic channels.
+- [ ] **ISSUE:** Not enough voltage for pyrotechnic channels (expected 0.5 to 1A current).
+- [ ] **ISSUE:** Battery connector -> Remove the +5V symbols. Rename.
+- [ ] **INVESTIGATE:** MOSFET turns on at +3.3V.
+- [ ] **OTHER:** Clean schematic
 
 ## Achieve Basic MVC (v1)
 
